@@ -1,0 +1,99 @@
+body {
+  line-height: 1.25;
+  font-size: $body-font-size + px;
+  font-family: $font-family;
+  color: $text-color;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  .wrapper {
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}
+
+// <ГОТОВЫЕ КЛАССЫ>----------------------------
+.flexbox {
+  display: flex;
+}
+
+.ai-c {
+  align-items: center;
+}
+.ai-s {
+  align-items: flex-start;
+}
+.ai-e {
+  align-items: flex-end;
+}
+
+.jc-c {
+  justify-content: center;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.none {
+  display: none !important;
+}
+
+//=============================================
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+//=============================================
+
+.bg-cov,
+.bg-con {
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.bg-cov {
+  background-size: cover;
+}
+.bg-con {
+  background-size: contain;
+}
+
+// </ГОТОВЫЕ КЛАССЫ>---------------------------
+
+.wrapper {
+  background-color: #000000;
+}
+
+.deco-line_title {
+  width: fit-content;
+  position: relative;
+  z-index: 2;
+  padding-left: 30px;
+  @include breakpoint(xs) {
+    padding-left: 15px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    transform: translateY(50%);
+    @include size(height, 100, 40);
+    @include size(width, 100, 40);
+    z-index: -1;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../img/svg/deco_title.svg");
+  }
+}

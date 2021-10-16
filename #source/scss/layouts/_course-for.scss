@@ -1,0 +1,101 @@
+.course-for_section {
+    margin-bottom: 150px;
+    @include breakpoint(xs) {
+        margin-bottom: 75px;
+    }
+    h2,
+    .h2 {
+        text-align: center;
+        margin-bottom: 100px;
+        @include breakpoint(xs) {
+            margin-bottom: 50px;
+        }
+    }
+
+    .row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 -15px 0;
+        @media (max-width: 1370px) {
+            margin: 0;
+        }
+        .item {
+            width: calc(100% / 2 - 30px);
+            margin: 45px 15px 15px;
+            @include size(font-size, 24, 16);
+            @media (max-width: 1370px) {
+                width: 100%;
+                margin: 45px 0 15px;
+            }
+            @include breakpoint(xs) {
+                margin: 0px 0 15px;
+            }
+            .card_1 {
+                padding: 30px 60px 60;
+                border-radius: 10px;
+                border: 1px solid $color_3;
+                @include breakpoint(xs) {
+                    padding: 30px;
+                }
+                .title_row {
+                    margin: 0 0 50px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    @include breakpoint(xs) {
+                        margin-bottom: 25px;
+                    }
+                }
+                .title {
+                    @include size(font-size, 36, 20);
+                }
+                .icon {
+                    width: 160px;
+                    height: 160px;
+                    margin-left: 15px;
+                    margin-top: -75px;
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    @include breakpoint(xs) {
+                        display: none;
+                    }
+                }
+                .m1 {
+                    background-image: url("../img/m1.png");
+                }
+                .m2 {
+                    background-image: url("../img/m2.png");
+                }
+            }
+            .card_2 {
+                padding: 0 40px 30px;
+                background-color: #ffffff;
+                border-radius: 10px;
+                border: 1px solid $color_3;
+                margin: -30px 15px 0;
+                @include breakpoint(xs) {
+                    margin: -15px 15px 0;
+                    padding: 20px;
+                }
+                .title {
+                    padding: 10px 40px 10px 30px;
+                    border-radius: 10px;
+                    background-color: $color_2;
+                    width: fit-content;
+                    text-transform: uppercase;
+                    margin: -10px 0 30px;
+                    @include breakpoint(xs) {
+                        margin: -10px 0 15px;
+                    }
+                }
+                .text {
+                    color: #000000;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}

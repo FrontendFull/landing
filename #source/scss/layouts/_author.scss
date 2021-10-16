@@ -1,0 +1,138 @@
+.author_section {
+    margin-bottom: 150px;
+    @include breakpoint(xs) {
+        margin-bottom: 75px;
+    }
+    h2,
+    .h2 {
+        margin-bottom: 40px;
+        @include breakpoint(xs) {
+            margin-bottom: 20px;
+        }
+        @include breakpoint(sm-down) {
+            text-align: center;
+        }
+    }
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .img_item {
+            width: calc(38% - 15px);
+            margin-right: 15px;
+            position: relative;
+            z-index: 2;
+            @include breakpoint(sm-down) {
+                display: none;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                z-index: -1;
+                right: 2%;
+                bottom: 2%;
+                height: 78%;
+                width: 135%;
+                background-image: url("../img/svg/author_deco.svg");
+            }
+            .link {
+                cursor: pointer;
+                width: fit-content;
+                background-color: rgba(0, 0, 0, 0.25);
+                border-radius: 10px;
+                position: absolute;
+                bottom: 0;
+                right: 50%;
+                transform: translateX(50%);
+                padding: 20px 40px 20px 103px;
+                font-size: 36px;
+                transition: 0.4s;
+                color: #ffffff;
+                @media (max-width: 1600px) {
+                    font-size: 24px;
+                }
+                @media (max-width: 1370px) {
+                    font-size: 18px;
+                    padding: 15px 20px 15px 95px;
+                }
+                &:hover {
+                    color: $color_1;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 30px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 48px;
+                    height: 48px;
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-image: url("../img/inst.png");
+                    @media (max-width: 1370px) {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    .img_wrap {
+        padding-top: calc(997 / 557 * 100%);
+    }
+    .text_section {
+        width: 53%;
+        @media (max-width: 1600px) {
+            width: 62%;
+        }
+        @include breakpoint(sm-down) {
+            width: 100%;
+        }
+        .list {
+            padding: 60px;
+            background-color: #161515;
+            border-radius: 10px;
+            @include breakpoint(xs) {
+                padding: 20px;
+            }
+        }
+        .item {
+            font-size: 24px;
+            @media (max-width: 1370px) {
+                font-size: 18px;
+            }
+            @include breakpoint(xs) {
+                font-size: 14 px;
+            }
+            margin-bottom: 30px;
+            padding-left: 45px;
+            position: relative;
+            @include breakpoint(xs) {
+                margin-bottom: 20px;
+                padding-left: 20px;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 7px;
+                left: 0;
+                height: 15px;
+                width: 15px;
+                background-color: $color_1;
+                border-radius: 50%;
+                @include breakpoint(xs) {
+                    height: 8px;
+                    width: 8px;
+                }
+            }
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

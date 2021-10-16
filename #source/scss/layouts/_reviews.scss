@@ -1,0 +1,43 @@
+.reviews_section {
+    overflow-x: hidden;
+    margin-bottom: 150px;
+    @include breakpoint(xs) {
+        margin-bottom: 80px;
+    }
+
+    .reviews.swiper {
+        margin-right: -300px;
+        @media (max-width: 1600px) {
+            margin-right: 0;
+        }
+        .swiper-wrapper {
+            height: initial;
+        }
+        .review {
+            .img_wrap {
+                padding-top: calc(605 / 340 * 100%);
+            }
+            transition: 0.4s;
+            cursor: pointer;
+        }
+
+        .swiper-slide-active + .review + .review + .review + .review {
+            opacity: 0.5;
+        }
+        .swiper-scrollbar {
+            left: 0;
+            background-color: #292929;
+            .swiper-scrollbar-drag {
+                background-color: #ffffff;
+            }
+            width: calc(100% - 380px);
+            @media (max-width: 1600px) {
+                width: 100%;
+            }
+        }
+        padding-bottom: 70px;
+        @include breakpoint(xs) {
+            padding-bottom: 35px;
+        }
+    }
+}

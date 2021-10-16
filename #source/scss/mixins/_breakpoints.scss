@@ -1,0 +1,71 @@
+@mixin breakpoint($point) {
+  @if $point == fullhd {
+    @media (max-width: 1920px) {
+      @content;
+    }
+  } @else if $point == hd {
+    @media (max-width: 1370px) {
+      @content;
+    }
+  } @else if $point == md-down {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  } @else if $point == sm {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point == sm-down {
+    @media (max-width: 1024px) {
+      @content;
+    }
+    @media (hover: none) and (pointer: coarse) {
+      @content;
+    }
+  } @else if $point == xs {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == mxs {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $point == smxs {
+    @media (max-width: 500px) {
+      @content;
+    }
+  } @else if $point == sxs {
+    @media (max-width: 450px) {
+      @content;
+    }
+  } @else if $point == ultra-sxs {
+    @media (max-width: 359px) {
+      @content;
+    }
+  }
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: $padd-container + px;
+  padding-right: $padd-container + px;
+  @media (min-width: $max-width + 2*$padd-container + 30 + px) {
+    max-width: $max-width + 2 * $padd-container + px;
+  }
+  @media (max-width: $max-width +2*$padd-container + 30 + px) {
+    max-width: 1350px;
+  }
+  @include breakpoint(hd) {
+    max-width: 1140px;
+  }
+  @include breakpoint(md-down) {
+    max-width: 970px;
+  }
+  @include breakpoint(sm) {
+    max-width: 750px;
+  }
+  @include breakpoint(xs) {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,90 @@
+.course_section {
+    margin-bottom: 130px;
+    @include breakpoint(xs) {
+        margin-bottom: 60px;
+    }
+    .title_module {
+        padding: 20px 20px 20px 110px;
+        background-color: $color_2;
+        display: inline-block;
+        border-radius: 10px;
+        @include size(font-size, 24, 18);
+        margin-left: 60px;
+        margin-bottom: -35px;
+        position: relative;
+        @include breakpoint(xs) {
+            margin-bottom: -22px;
+            padding: 10px 10px 10px 75px;
+            margin-left: 10px;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            width: 65px;
+            height: 50px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            @include breakpoint(xs) {
+                width: 42px;
+                height: 35px;
+            }
+        }
+        &.module_1::after {
+            background-image: url("../img/svg/module_1.svg");
+        }
+        &.module_2::after {
+            background-image: url("../img/svg/module_2.svg");
+        }
+        &.module_3::after {
+            background-image: url("../img/svg/module_3.svg");
+        }
+        &.module_4::after {
+            background-image: url("../img/svg/module_4.svg");
+        }
+    }
+
+    .module_wrap {
+        padding: 95px 60px 60px 60px;
+        border: 1px solid $color_2;
+        border-radius: 10px;
+        margin-bottom: 60px;
+        @include breakpoint(xs) {
+            padding: 40px 20px 20px 20px;
+            margin-bottom: 30px;
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        .list {
+            .item {
+                margin-bottom: 20px;
+                font-size: 2f4px;
+                @include size(font-size, 24, 14);
+                font-weight: 300;
+                padding-left: 50px;
+                position: relative;
+                line-height: 1.2;
+                @include breakpoint(xs) {
+                    padding-left: 20px;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 20px;
+                    height: 1px;
+                    @include size(top, 16, 8);
+                    left: 0;
+                    background-color: $color_3;
+                    @include breakpoint(xs) {
+                        width: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

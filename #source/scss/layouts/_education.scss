@@ -1,0 +1,212 @@
+.education_section {
+    margin-bottom: 130px;
+    @include breakpoint(xs) {
+        margin-bottom: 60px;
+    }
+
+    .table_desktop {
+        @media (max-width: 1600px) {
+            display: none;
+        }
+    }
+
+    .table_mobile {
+        display: none;
+        @media (max-width: 1600px) {
+            display: block;
+        }
+    }
+
+    .table_wrap {
+        .row {
+            display: flex;
+            padding: 30px 0;
+            border-bottom: 1px solid $color_2;
+            &:last-of-type {
+                border: none;
+            }
+            &.row_header {
+                justify-content: center;
+                .column {
+                    text-align: center;
+                    padding: 0;
+                }
+            }
+        }
+        .column {
+            &:nth-child(1) {
+                width: 34%;
+            }
+            &:nth-child(2) {
+                width: 22%;
+            }
+            &:nth-child(3) {
+                width: 22%;
+            }
+            &:nth-child(4) {
+                width: 22%;
+            }
+            @media (max-width: 1600px) {
+                &:nth-child(1) {
+                    width: 50%;
+                }
+                &:nth-child(2) {
+                    width: 50%;
+                }
+            }
+            padding-right: 10px;
+            @include size(font-size, 24, 14);
+            & + .column {
+                text-align: center;
+                padding: 0 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            &.deco {
+                position: relative;
+                padding-left: 50px;
+                @include breakpoint(xs) {
+                    padding-left: 30px;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0px;
+                    left: 0;
+                    height: 30px;
+                    width: 30px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    @include breakpoint(xs) {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+                &.deco_1 {
+                    &:after {
+                        background-image: url("/img/svg/deco_1.svg");
+                    }
+                }
+                &.deco_2 {
+                    &:after {
+                        background-image: url("/img/svg/deco_2.svg");
+                    }
+                }
+                &.deco_3 {
+                    &:after {
+                        background-image: url("/img/svg/deco_3.svg");
+                    }
+                }
+                &.deco_4 {
+                    &:after {
+                        background-image: url("/img/svg/deco_4.svg");
+                    }
+                }
+                &.deco_5 {
+                    &:after {
+                        background-image: url("/img/svg/deco_5.svg");
+                    }
+                }
+                &.deco_6 {
+                    &:after {
+                        background-image: url("/img/svg/deco_6.svg");
+                    }
+                }
+                &.deco_7 {
+                    &:after {
+                        background-image: url("/img/svg/deco_7.svg");
+                    }
+                }
+            }
+            .yes,
+            .no {
+                width: 35px;
+                height: 35px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                @include breakpoint(xs) {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+            .yes {
+                background-image: url("../img/svg/yes.svg");
+            }
+            .no {
+                background-image: url("../img/svg/no.svg");
+            }
+            .title {
+                color: $color_2;
+                margin-bottom: 10px;
+            }
+            .price {
+                @include size(font-size, 36, 20);
+                margin-bottom: 30px;
+            }
+            .button {
+                margin-bottom: 30px;
+                @include breakpoint(xs) {
+                    min-width: initial;
+                }
+            }
+        }
+        .info_row {
+            justify-content: center;
+            .column {
+                width: 95%;
+                padding: 0;
+                text-align: center;
+                & + .column {
+                    border-right: 1px solid $color_2;
+                    &:last-of-type {
+                        border-right: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .table_mobile.swiper {
+        .swiper-button-arrow {
+            position: relative;
+            .swiper-button-prev,
+            .swiper-button-next {
+                top: 48px;
+                width: 48px;
+                height: 48px;
+                background-color: $color_2;
+                border-radius: 50%;
+                &:hover {
+                    &::after {
+                        color: #ffffff;
+                    }
+                }
+                &::after {
+                    transition: 0.4s;
+                    color: #000000;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 26px;
+                    width: 13px;
+                    font-size: 16px;
+                }
+            }
+            .swiper-button-prev {
+            }
+            .swiper-button-next {
+            }
+        }
+        .swiper-wrapper {
+            height: initial;
+        }
+        .swiper-slide {
+            width: 100%;
+            padding: 0 10px;
+        }
+    }
+}
