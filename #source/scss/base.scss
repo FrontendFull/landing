@@ -97,3 +97,13 @@ body {
     background-image: url("../img/svg/deco_title.svg");
   }
 }
+
+.section {
+  position: relative;
+  .anchor {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    top: -150px;
+  }
+}

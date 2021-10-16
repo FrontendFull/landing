@@ -1,4 +1,25 @@
 window.onload = function () {
+
+    document.querySelector('.menu .btn-close').addEventListener('click', function () {
+        this.closest('.menu').classList.remove('active');
+    })
+
+    document.querySelector('.btn-open').addEventListener('click', function () {
+        this.nextElementSibling.classList.add('active');
+    })
+
+    document.querySelector('.btn-open').addEventListener('click', function () {
+        this.nextElementSibling.classList.add('active');
+    })
+
+    for (const item of document.querySelectorAll('.menu_link')) {
+        item.addEventListener('click', function () {
+            this.closest('.menu').classList.remove('active');
+        })
+    }
+
+
+
     const course = new Swiper('.table_mobile.swiper', {
         // Optional parameters
         direction: 'horizontal',
@@ -109,4 +130,51 @@ window.onload = function () {
         input.addEventListener("blur", mask, false);
         input.addEventListener("keydown", mask, false);
     });
+
+
+
+
+    for (let anchor of document.querySelectorAll('.menu_link')) {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault()
+
+            const blockID = anchor.getAttribute('href')
+
+            document.querySelector(blockID).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+        })
+    }
+
+
+    let dateTopAnchors = [];
+    for (let item of document.querySelectorAll('.anchor')) {
+        dateTopAnchors.push(item.getBoundingClientRect().top + pageYOffset)
+    }
+    dateTopAnchors[0] = 40;
+
+
+    let currentActive = -1;
+    window.scrollBy(0, 1)
+    window.addEventListener('scroll', function () {
+        for (let i = 0; i < dateTopAnchors.length; i++) {
+            currentActive < 0 ? currentActive = i : currentActive = currentActive;
+            if (window.pageYOffset <= dateTopAnchors[i]) {
+                if (currentActive !== i) {
+                    document.querySelector(`.link-${currentActive + 1}`).classList.remove('active');
+                    currentActive = i;
+                    document.querySelector(`.link-${i + 1}`).classList.add('active');
+                }
+
+                break;
+            }
+
+        }
+    });
+
+
 }
+window.addEventListener('scroll', function () {
+    window.pageYOffset > 10 ? document.querySelector('.header').classList.add('scroll') : document.querySelector('.header').classList.remove('scroll');
+});
