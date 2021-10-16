@@ -538,22 +538,16 @@ input:focus::placeholder, input:active::placeholder {
   left: 0;
   width: 100%;
   z-index: 10;
-  border-bottom: 1px solid #333232;
-}
-@media (max-width: 1024px) {
-  .header {
-    border-bottom: none;
-  }
-}
-@media (hover: none) and (pointer: coarse) {
-  .header {
-    border-bottom: none;
-  }
 }
 .header.scroll {
   background-color: black;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+.header.scroll .menu {
+  padding: 20px 0;
 }
 .header .menu {
+  transition: 0.4s;
   padding: 45px 0 45px;
   display: flex;
   align-items: center;
@@ -655,11 +649,11 @@ input:focus::placeholder, input:active::placeholder {
   }
 }
 .header .menu .menu_item + .menu_item {
-  margin-left: 65px;
+  margin-left: 35px;
 }
 @media (max-width: 1600px) {
   .header .menu .menu_item + .menu_item {
-    margin-left: 30px;
+    margin-left: 10px;
   }
 }
 @media (max-width: 1024px) {
@@ -675,6 +669,7 @@ input:focus::placeholder, input:active::placeholder {
   }
 }
 .header .menu .menu_link {
+  padding-left: 30px;
   font-size: 18px;
   color: #ffffff;
   position: relative;
@@ -703,9 +698,6 @@ input:focus::placeholder, input:active::placeholder {
   height: 25px;
   opacity: 0;
   transition: 0.4s;
-}
-.header .menu .menu_link.active {
-  padding-left: 40px;
 }
 .header .menu .menu_link.active::after {
   opacity: 1;

@@ -4,14 +4,15 @@
     left: 0;
     width: 100%;
     z-index: 10;
-    border-bottom: 1px solid $color_2;
-    @include breakpoint(sm-down) {
-        border-bottom: none;
-    }
     &.scroll {
         background-color: rgba(0, 0, 0, 1);
+        border-bottom: 2px solid rgba(255,255,255,.5);
+        .menu{
+            padding: 20px 0;
+        }
     }
     .menu {
+        transition: 0.4s;
         padding: 45px 0 45px;
         display: flex;
         align-items: center;
@@ -66,9 +67,9 @@
 
         .menu_item {
             & + .menu_item {
-                margin-left: 65px;
+                margin-left: 35px;
                 @media (max-width: 1600px) {
-                    margin-left: 30px;
+                    margin-left: 10px;
                 }
                 @include breakpoint(sm-down) {
                     margin-left: 0;
@@ -77,6 +78,7 @@
             }
         }
         .menu_link {
+            padding-left: 30px;
             font-size: 18px;
             color: #ffffff;
             position: relative;
@@ -96,10 +98,9 @@
                 width: 20px;
                 height: 25px;
                 opacity: 0;
-                transition: 0.4s;
+                transition: 0.4s
             }
             &.active {
-                padding-left: 40px;
                 &::after {
                     opacity: 1;
                 }
