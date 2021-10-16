@@ -10,16 +10,28 @@
   <link rel="shortcut icon" href="img/icons/favicon.ico"/>
 </head>
 <body>
-  <!--include ./components/header.pug-->
+  <header class="header">
+    <div class="container">
+      <ul class="menu">
+        <li class="menu_item"><a class="menu_link link-1" href="#link-1">Практический онлайн-курс</a></li>
+        <li class="menu_item"><a class="menu_link link-2" href="#link-2">Программа обучения</a></li>
+        <li class="menu_item"><a class="menu_link link-3" href="#link-3">Стоимость</a></li>
+        <li class="menu_item"><a class="menu_link link-4" href="#link-4">Отзывы</a></li>
+        <li class="menu_item"><a class="menu_link link-5" href="#link-5">Хочу на обучение</a></li>
+      </ul>
+    </div>
+  </header>
   <div class="wrapper">
-    <div class="banner_section">
+    <div class="banner_section" id="link-1">
       <div class="c1"></div>
       <div class="c2"></div>
       <div class="c3"></div>
       <div class="rozetka"></div>
       <div class="olx"></div>
-      <div class="main"></div>
       <div class="banner_content">
+        <div class="main">
+          <div class="a link" href="https://www.youtube.com/channel/UCjVP-kKduX1P58V5LYjTnuA">Александр Штабура<span>Владелец 12 интернет-магазинов</span></div>
+        </div>
         <div class="container">
           <div class="text_section">
             <div class="h1 title">Курс по <span>Prom.ua 2.0</span></div>
@@ -114,7 +126,7 @@
         <div class="button">Узнать, чего достигли выпустники</div>
       </div>
     </div>
-    <div class="course_section">
+    <div class="course_section" id="link-2">
       <div class="container">
         <div class="h2 deco-line_title">Программа курса</div>
         <div class="title_module module_1">Модуль 1</div>
@@ -172,7 +184,7 @@
         </div>
       </div>
     </div>
-    <div class="education_section">
+    <div class="education_section" id="link-3">
       <div class="container">
         <div class="h2 deco-line_title">Выбери свой формат обучение</div>
         <div class="table_desktop">
@@ -635,7 +647,7 @@
             <div class="img_wrap object-fit"><img src="img/result-4.jpg" alt="img"/></div></a></div>
       </div>
     </div>
-    <div class="reviews_section">
+    <div class="reviews_section" id="link-4">
       <div class="container">
         <div class="h2 deco-line_title">Результаты наших студентов</div>
         <div class="reviews swiper">
@@ -736,7 +748,7 @@
         </div>
       </div>
     </div>
-    <div class="help_section">
+    <div class="help_section" id="link-5">
       <div class="container">
         <div class="h2">Я немного в растерянности, мне нужна помощь</div>
         <div class="subtitle">Оставьте свои контакты, и мы свяжемся с вами, чтобы ответить на все вопросы.</div>
@@ -744,7 +756,7 @@
           <div class="input-wrap">
             <input type="text" placeholder="Имя" name="name"/>
           </div>
-          <div class="input-wrap">
+          <div class="input-wrap phone">
             <input type="text" placeholder="+380 (99) 999-99-99" name="phone"/>
           </div>
           <input type="submit" value="Помогите мне с выбором"/>

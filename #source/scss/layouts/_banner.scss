@@ -4,6 +4,10 @@
     position: relative;
     z-index: 5;
     overflow: hidden;
+    min-height: 800px;
+    @include breakpoint(sm-down) {
+        height: initial;
+    }
     .c1 {
         content: "";
         position: absolute;
@@ -16,6 +20,13 @@
         background-position: center;
         background-image: url("../img/svg/c1.svg");
         z-index: -3;
+        @include breakpoint(sm-down) {
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include size(height, 1400, 400);
+            @include size(width, 1400, 400);
+        }
     }
     .c2 {
         content: "";
@@ -29,6 +40,17 @@
         background-position: center;
         background-image: url("../img/svg/c2.svg");
         z-index: -1;
+        @include breakpoint(sm-down) {
+            right: initial;
+            bottom: -15%;
+            left: -20%;
+            @include size(height, 1400, 500);
+            @include size(width, 1400, 500);
+        }
+        @include breakpoint(xs) {
+            bottom: -10%;
+            left: -40%;
+        }
     }
     .c3 {
         content: "";
@@ -42,6 +64,18 @@
         background-position: center;
         background-image: url("../img/svg/c3.svg");
         z-index: -1;
+        @include breakpoint(sm-down) {
+            right: initial;
+            top: 50%;
+            right: -20%;
+            transform: translate(-0%, -50%);
+            @include size(height, 1400, 500);
+            @include size(width, 1400, 500);
+        }
+        @include breakpoint(xs) {
+            top: 75%;
+            right: -40%;
+        }
     }
     .rozetka {
         position: absolute;
@@ -54,6 +88,15 @@
         background-position: center;
         background-image: url("../img/svg/rozetka.svg");
         z-index: -1;
+        @include breakpoint(sm-down) {
+            left: 10%;
+            bottom: 20%;
+        }
+        @include breakpoint(xs) {
+            width: 200px;
+            height: 67px;
+            left: 0%;
+        }
     }
     .olx {
         position: absolute;
@@ -65,7 +108,18 @@
         background-repeat: no-repeat;
         background-position: center;
         background-image: url("../img/svg/olx.svg");
+        @include breakpoint(sm-down) {
+            top: 50%;
+            right: 10%;
+            transform: translate(-0%, -50%);
+        }
         z-index: -1;
+        @include breakpoint(xs) {
+            width: 95px;
+            height: 63px;
+            top: 70%;
+            right: 0;
+        }
     }
     .main {
         position: absolute;
@@ -80,34 +134,117 @@
         width: 830px;
         height: 950px;
         z-index: 1;
-    }
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: -50%;
-        left: 0;
-        height: 60%;
-        width: 100%;
-        background: rgb(0, 0, 0);
-        z-index: 1;
-        background: linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0.9500175070028011) 35%,
-            rgba(0, 0, 0, 1) 100%
-        );
+        @media (max-width: 1600px) {
+            width: 705px;
+            height: 807px;
+        }
+        @media (max-width: 1370px) {
+            width: 635px;
+            height: 725px;
+        }
+        @include breakpoint(md-down) {
+            width: 570px;
+            height: 650px;
+        }
+        @include breakpoint(sm-down) {
+            right: 50%;
+            transform: translateX(50%);
+        }
+        @include breakpoint(xs) {
+            width: 345px;
+            height: 400px;
+        }
+        @media (max-width: 345px) {
+            width: 320px;
+        }
+        .link {
+            z-index: 3;
+            position: absolute;
+            bottom: 10%;
+            right: 50%;
+            transform: translateX(50%);
+            color: #ffffff;
+            cursor: pointer;
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            @include size(font-size, 36, 24);
+            padding: 20px 40px 20px 100px;
+            background-color: rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            width: fit-content;
+            @include breakpoint(xs) {
+                font-size: 20px;
+                bottom: 0;
+                padding: 15px 20px 15px 90px;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 30px;
+                top: 25px;
+                width: 48px;
+                height: 48px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url("../img/svg/yt.svg");
+                @include breakpoint(xs) {
+                    top: 15px;
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+            span {
+                margin-top: 10px;
+
+                @include size(font-size, 18, 16);
+                @include breakpoint(xs) {
+                    font-size: 14px;
+                }
+            }
+            &:hover {
+                color: $color_1;
+            }
+        }
     }
     @include breakpoint(xs) {
         margin-bottom: 75px;
     }
     .banner_content {
+        padding-top: 140px;
         background-color: rgba(0, 0, 0, 0.5);
         width: 100%;
         height: 100%;
+        position: relative;
+        @include breakpoint(sm-down) {
+            height: initial;
+            padding-bottom: 650px;
+        }
+        @include breakpoint(xs) {
+            padding-bottom: 400px;
+            padding-top: 90px;
+        }
         .container {
             height: 100%;
             display: flex;
             align-items: center;
+            @include breakpoint(sm-down) {
+                height: initial;
+                justify-content: center;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 20%;
+            width: 100%;
+            background: rgb(0, 0, 0);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+            pointer-events: none;
+            z-index: -1;
         }
     }
     .text_section {
@@ -118,10 +255,22 @@
             span {
                 text-shadow: 3px 5px $color_3;
             }
+            @media (max-width: 1600px) {
+                font-size: 72px;
+            }
+            @media (max-width: 1370px) {
+                font-size: 60px;
+            }
+            @include breakpoint(md-down) {
+                font-size: 48px;
+            }
         }
         .subtitle {
             @include size(font-size, 36, 20);
             @include size(margin-bottom, 60, 30);
+            @media (max-width: 1370px) {
+                font-size: 24px;
+            }
         }
         .info-wrap {
             display: flex;
@@ -131,6 +280,9 @@
             width: fit-content;
             @include size(margin-bottom, 60, 30);
             @include size(font-size, 18, 14);
+            @include breakpoint(xs) {
+                display: none;
+            }
             .info_item {
                 display: flex;
                 flex-direction: column;
@@ -148,6 +300,9 @@
         }
         .button {
             width: fit-content;
+            @include breakpoint(sm-down) {
+                margin: 0 auto;
+            }
         }
     }
 }

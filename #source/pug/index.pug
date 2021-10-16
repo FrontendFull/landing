@@ -3,8 +3,8 @@ html(lang="ru")
 include ./components/head.pug
   
 body
-    //include ./components/header.pug
-    div.wrapper
+    include ./components/header.pug
+    .wrapper
         include ./section/banner_section.pug
         include ./section/video_section.pug
         include ./section/course-for_section.pug
@@ -16,11 +16,7 @@ body
         include ./section/reviews_section.pug
         include ./section/author_section.pug
         include ./section/fqa_section.pug
-        include ./section/help_section.pug
-       
-       
-                            
-                       
+        include ./section/help_section.pug              
     include ./components/footer.pug
 
 include ./components/bottom.pug 
