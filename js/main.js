@@ -2,19 +2,19 @@ window.onload = function () {
 
     document.querySelector('.menu .btn-close').addEventListener('click', function () {
         this.closest('.menu').classList.remove('active');
+        document.querySelector('body').style.overflow = 'initial';
     })
 
     document.querySelector('.btn-open').addEventListener('click', function () {
         this.nextElementSibling.classList.add('active');
-    })
+        document.querySelector('body').style.overflow = 'hidden';
 
-    document.querySelector('.btn-open').addEventListener('click', function () {
-        this.nextElementSibling.classList.add('active');
     })
 
     for (const item of document.querySelectorAll('.menu_link')) {
         item.addEventListener('click', function () {
             this.closest('.menu').classList.remove('active');
+            document.querySelector('body').style.overflow = 'initial';
         })
     }
 

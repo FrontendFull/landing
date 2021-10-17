@@ -547,6 +547,21 @@ input:active::placeholder {
 .header.scroll .menu {
   padding: 20px 0;
 }
+@media (max-width: 1024px) {
+  .header.scroll .menu {
+    padding: 60px 30px;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .header.scroll .menu {
+    padding: 60px 30px;
+  }
+}
+@media (max-width: 767px) {
+  .header.scroll .menu {
+    padding: 70px 15px;
+  }
+}
 .header .menu {
   transition: 0.4s;
   padding: 45px 0 45px;
@@ -555,7 +570,6 @@ input:active::placeholder {
 }
 @media (max-width: 1024px) {
   .header .menu {
-    padding: 60px 30px;
     background-color: #ffffff;
     flex-direction: column;
     align-items: flex-start;
@@ -566,6 +580,7 @@ input:active::placeholder {
     transition: 0.4s;
     transform: translateX(-110%);
     pointer-events: none;
+    height: 100vh;
   }
   .header .menu.active {
     transform: translateX(0);
@@ -600,7 +615,6 @@ input:active::placeholder {
 }
 @media (hover: none) and (pointer: coarse) {
   .header .menu {
-    padding: 60px 30px;
     background-color: #ffffff;
     flex-direction: column;
     align-items: flex-start;
@@ -611,6 +625,7 @@ input:active::placeholder {
     transition: 0.4s;
     transform: translateX(-110%);
     pointer-events: none;
+    height: 100vh;
   }
   .header .menu.active {
     transform: translateX(0);
@@ -1935,25 +1950,25 @@ input:active::placeholder {
   }
 }
 .education_section .table_wrap .column.deco.deco_1:after {
-  background-image: url("/img/svg/deco_1.svg");
+  background-image: url("../img/svg/deco_1.svg");
 }
 .education_section .table_wrap .column.deco.deco_2:after {
-  background-image: url("/img/svg/deco_2.svg");
+  background-image: url("../img/svg/deco_2.svg");
 }
 .education_section .table_wrap .column.deco.deco_3:after {
-  background-image: url("/img/svg/deco_3.svg");
+  background-image: url("../img/svg/deco_3.svg");
 }
 .education_section .table_wrap .column.deco.deco_4:after {
-  background-image: url("/img/svg/deco_4.svg");
+  background-image: url("../img/svg/deco_4.svg");
 }
 .education_section .table_wrap .column.deco.deco_5:after {
-  background-image: url("/img/svg/deco_5.svg");
+  background-image: url("../img/svg/deco_5.svg");
 }
 .education_section .table_wrap .column.deco.deco_6:after {
-  background-image: url("/img/svg/deco_6.svg");
+  background-image: url("../img/svg/deco_6.svg");
 }
 .education_section .table_wrap .column.deco.deco_7:after {
-  background-image: url("/img/svg/deco_7.svg");
+  background-image: url("../img/svg/deco_7.svg");
 }
 .education_section .table_wrap .column .yes,
 .education_section .table_wrap .column .no {
