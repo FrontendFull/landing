@@ -426,7 +426,7 @@ body .wrapper {
 .section {
   position: relative;
 }
-.section .anchor {
+.section .anchor, .section .btn-anchor {
   position: absolute;
   pointer-events: none;
   opacity: 0;
@@ -523,7 +523,7 @@ input {
   }
 }
 input::placeholder {
-  color: inherit;
+  color: #707070;
   font-size: inherit;
   transition: 0.4s;
   opacity: 1;
@@ -576,7 +576,7 @@ input:active::placeholder {
     position: absolute;
     top: 0;
     left: 0;
-    width: 80%;
+    width: 100%;
     transition: 0.4s;
     transform: translateX(-110%);
     pointer-events: none;
@@ -621,7 +621,7 @@ input:active::placeholder {
     position: absolute;
     top: 0;
     left: 0;
-    width: 80%;
+    width: 100%;
     transition: 0.4s;
     transform: translateX(-110%);
     pointer-events: none;
@@ -656,12 +656,6 @@ input:active::placeholder {
   .header .menu .btn-close::before {
     height: 100%;
     width: 1px;
-  }
-}
-@media (max-width: 767px) {
-  .header .menu {
-    padding: 70px 15px;
-    width: 100%;
   }
 }
 .header .menu .menu_item + .menu_item {

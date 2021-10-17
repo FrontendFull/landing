@@ -35,7 +35,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 80%;
+    width: 100%;
     transition: 0.4s;
     transform: translateX(-110%);
     pointer-events: none;
@@ -75,11 +75,6 @@
       }
     }
   }
-  @include breakpoint(xs) {
-    padding: 70px 15px;
-    width: 100%;
-  }
-
   .menu_item {
     & + .menu_item {
       margin-left: 35px;

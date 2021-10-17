@@ -2,22 +2,21 @@ window.onload = function () {
 
     document.querySelector('.menu .btn-close').addEventListener('click', function () {
         this.closest('.menu').classList.remove('active');
+        document.querySelector('body').style.overflow = 'initial';
     })
 
     document.querySelector('.btn-open').addEventListener('click', function () {
         this.nextElementSibling.classList.add('active');
-    })
+        document.querySelector('body').style.overflow = 'hidden';
 
-    document.querySelector('.btn-open').addEventListener('click', function () {
-        this.nextElementSibling.classList.add('active');
     })
 
     for (const item of document.querySelectorAll('.menu_link')) {
         item.addEventListener('click', function () {
             this.closest('.menu').classList.remove('active');
+            document.querySelector('body').style.overflow = 'initial';
         })
     }
-
 
 
     const course = new Swiper('.table_mobile.swiper', {
@@ -79,7 +78,7 @@ window.onload = function () {
         })
     }
 
-    for (const item of document.querySelectorAll('.button')) {
+    for (const item of document.querySelectorAll('a.modal')) {
 
         item.addEventListener('click', function (e) {
             e.preventDefault();
@@ -151,7 +150,7 @@ window.onload = function () {
 
 
 
-    for (let anchor of document.querySelectorAll('.menu_link')) {
+    for (let anchor of document.querySelectorAll('.menu_link,.btn_anchor')) {
         anchor.addEventListener('click', function (e) {
             e.preventDefault()
 

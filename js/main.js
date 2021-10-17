@@ -19,7 +19,6 @@ window.onload = function () {
     }
 
 
-
     const course = new Swiper('.table_mobile.swiper', {
         // Optional parameters
         direction: 'horizontal',
@@ -79,7 +78,7 @@ window.onload = function () {
         })
     }
 
-    for (const item of document.querySelectorAll('a.button')) {
+    for (const item of document.querySelectorAll('a.modal')) {
 
         item.addEventListener('click', function (e) {
             e.preventDefault();
@@ -151,7 +150,7 @@ window.onload = function () {
 
 
 
-    for (let anchor of document.querySelectorAll('.menu_link')) {
+    for (let anchor of document.querySelectorAll('.menu_link,.btn_anchor')) {
         anchor.addEventListener('click', function (e) {
             e.preventDefault()
 
