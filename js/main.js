@@ -79,7 +79,7 @@ window.onload = function () {
         })
     }
 
-    for (const item of document.querySelectorAll('.button')) {
+    for (const item of document.querySelectorAll('a.button')) {
 
         item.addEventListener('click', function (e) {
             e.preventDefault();
