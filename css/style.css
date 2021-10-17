@@ -704,9 +704,6 @@ input:active::placeholder {
   opacity: 1;
 }
 @media (max-width: 767px) {
-  .header .menu .menu_link.active {
-    padding: 0;
-  }
   .header .menu .menu_link.active::after {
     opacity: 0;
   }
@@ -1152,6 +1149,7 @@ input:active::placeholder {
     font-size: 20px;
     bottom: 0;
     padding: 15px 20px 15px 90px;
+    width: 100%;
   }
 }
 .banner_section .main .link::after {

@@ -105,7 +105,6 @@
                     opacity: 1;
                 }
                 @include breakpoint(xs) {
-                    padding: 0;
                     &::after {
                         opacity: 0;
                     }
