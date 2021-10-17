@@ -79,6 +79,23 @@ window.onload = function () {
         })
     }
 
+    for (const item of document.querySelectorAll('.button')) {
+
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            Fancybox.show(
+                [
+                    {
+                        src: this.getAttribute("href"),
+                        type: "inline",
+                    },
+                ],
+            );
+        })
+    }
+
+
+
     for (const item of document.querySelectorAll('.btn-toggle')) {
 
         item.addEventListener('click', function () {

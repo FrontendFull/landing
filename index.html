@@ -51,8 +51,7 @@
                 <div class="info_title">Все прошло курс</div>
                 <div class="info_text">> 350 учеников</div>
               </div>
-            </div>
-            <div class="button">Подобрать программу</div>
+            </div><a class="button" href="#modal">Подобрать программу</a>
           </div>
         </div>
       </div>
@@ -658,25 +657,25 @@
         <div class="reviews swiper">
           <div class="swiper-wrapper">
             <div class="review swiper-slide">
-              <div class="img_wrap object-fit"><img src="img/review.jpg" alt="img"/></div>
+              <div class="img_wrap object-fit" data-fancybox="review" data-src="img/review.jpg"><img src="img/review.jpg" alt="img"/></div>
             </div>
             <div class="review swiper-slide">
-              <div class="img_wrap object-fit"><img src="img/review.jpg" alt="img"/></div>
+              <div class="img_wrap object-fit" data-fancybox="review" data-src="img/review.jpg"><img src="img/review.jpg" alt="img"/></div>
             </div>
             <div class="review swiper-slide">
-              <div class="img_wrap object-fit"><img src="img/review.jpg" alt="img"/></div>
+              <div class="img_wrap object-fit" data-fancybox="review" data-src="img/review.jpg"><img src="img/review.jpg" alt="img"/></div>
             </div>
             <div class="review swiper-slide">
-              <div class="img_wrap object-fit"><img src="img/review.jpg" alt="img"/></div>
+              <div class="img_wrap object-fit" data-fancybox="review" data-src="img/review.jpg"><img src="img/review.jpg" alt="img"/></div>
             </div>
             <div class="review swiper-slide">
-              <div class="img_wrap object-fit"><img src="img/review.jpg" alt="img"/></div>
+              <div class="img_wrap object-fit" data-fancybox="review" data-src="img/review.jpg"><img src="img/review.jpg" alt="img"/></div>
             </div>
             <div class="review swiper-slide">
-              <div class="img_wrap object-fit"><img src="img/review.jpg" alt="img"/></div>
+              <div class="img_wrap object-fit" data-fancybox="review" data-src="img/review.jpg"><img src="img/review.jpg" alt="img"/></div>
             </div>
             <div class="review swiper-slide">
-              <div class="img_wrap object-fit"><img src="img/review.jpg" alt="img"/></div>
+              <div class="img_wrap object-fit" data-fancybox="review" data-src="img/review.jpg"><img src="img/review.jpg" alt="img"/></div>
             </div>
           </div>
           <div class="swiper-scrollbar"></div>
@@ -774,6 +773,16 @@
     <div class="footer_wrap"><a class="link">Политика конфидинциальности</a><a class="link">Гарантии возрата</a><a class="link">Публичная оферта</a></div>
   </footer>
 </body>
+<form class="form_modal" id="modal">
+  <div class="title">Забронировать</div>
+  <div class="input-wrap">
+    <input type="text" placeholder="Имя" name="name"/>
+  </div>
+  <div class="input-wrap phone">
+    <input type="text" placeholder="+380 (99) 999-99-99" name="phone"/>
+  </div>
+  <input type="submit" value="Оставить заявку"/>
+</form>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.8/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>

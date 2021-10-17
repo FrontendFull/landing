@@ -448,6 +448,7 @@ body .wrapper {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.4s;
+  color: #ffffff;
 }
 @media (min-width: 1570px) {
   .button,
@@ -527,7 +528,7 @@ input::placeholder {
   transition: 0.4s;
   opacity: 1;
 }
-input:focus::placeholder, input:active::placeholder {
+input:active::placeholder {
   opacity: 0;
   transform: translateY(-100%);
 }
@@ -2783,6 +2784,70 @@ input:focus::placeholder, input:active::placeholder {
 @media (hover: none) and (pointer: coarse) {
   .help_section .form-wrap::after {
     display: none;
+  }
+}
+
+.form_modal {
+  background-color: #000000;
+  max-width: 900px;
+  width: 100%;
+  padding: 60px 150px;
+  border-radius: 10px;
+  border: 1px solid #333232;
+}
+@media (max-width: 1024px) {
+  .form_modal {
+    padding: 40px 30px;
+    width: 90%;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .form_modal {
+    padding: 40px 30px;
+    width: 90%;
+  }
+}
+.form_modal .title {
+  font-size: calc( 18px + (48 - 18) * ((100vw - 320px) / (1540 - 320)) );
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+@media (min-width: 1570px) {
+  .form_modal .title {
+    font-size: 48px;
+  }
+}
+@media (max-width: 320px) {
+  .form_modal .title {
+    font-size: 18px;
+  }
+}
+@media (max-width: 500px) {
+  .form_modal .title {
+    text-align: center;
+  }
+}
+.form_modal [type=submit] {
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+@media (max-width: 1024px) {
+  .form_modal [type=submit] {
+    margin-top: 30px;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .form_modal [type=submit] {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .form_modal [type=submit] {
+    min-width: initial;
+    margin-top: 0;
+    padding: 10px 30px;
   }
 }
 
