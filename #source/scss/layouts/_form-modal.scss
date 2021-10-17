@@ -1,0 +1,34 @@
+.form_modal {
+    background-color: #000000;
+    max-width: 900px;
+    width: 100%;
+    padding: 60px 150px;
+    border-radius: 10px;
+    border: 1px solid $color_2;
+    @include breakpoint(sm-down) {
+        padding: 40px 30px;
+        width: 90%;
+    }
+    .title {
+        @include size(font-size, 48, 18);
+        margin-bottom: 30px;
+        color: #ffffff;
+        @include breakpoint(smxs) {
+            text-align: center;
+        }
+    }
+    [type="submit"] {
+        width: fit-content;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 60px;
+        @include breakpoint(sm-down) {
+            margin-top: 30px;
+        }
+        @include breakpoint(smxs) {
+            min-width: initial;
+            margin-top: 0;
+            padding: 10px 30px;
+        }
+    }
+}
