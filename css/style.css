@@ -2788,6 +2788,7 @@ input:active::placeholder {
 }
 
 .form_modal {
+  display: none;
   background-color: #000000;
   max-width: 900px;
   width: 100%;
