@@ -1,19 +1,19 @@
 window.onload = function () {
 
-    document.querySelector('.menu .btn-close').addEventListener('click', function () {
-        this.closest('.menu').classList.remove('active');
+    document.querySelector('.btn-close').addEventListener('click', function () {
+        this.closest('.menu_mobile').classList.remove('active');
         document.querySelector('body').style.overflow = 'initial';
     })
 
     document.querySelector('.btn-open').addEventListener('click', function () {
-        this.nextElementSibling.classList.add('active');
+        document.querySelector('.menu_mobile').classList.add('active');
         document.querySelector('body').style.overflow = 'hidden';
 
     })
 
     for (const item of document.querySelectorAll('.menu_link')) {
         item.addEventListener('click', function () {
-            this.closest('.menu').classList.remove('active');
+            this.closest('.menu_mobile').classList.remove('active');
             document.querySelector('body').style.overflow = 'initial';
         })
     }
@@ -85,7 +85,22 @@ window.onload = function () {
             Fancybox.show(
                 [
                     {
-                        src: this.getAttribute("href"),
+                        src: '#modal',
+                        type: "inline",
+                    },
+                ],
+            );
+        })
+    }
+
+    for (const item of document.querySelectorAll('input[type="submit"]')) {
+
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            Fancybox.show(
+                [
+                    {
+                        src: '#modal-good',
                         type: "inline",
                     },
                 ],
@@ -194,3 +209,17 @@ window.onload = function () {
 window.addEventListener('scroll', function () {
     window.pageYOffset > 10 ? document.querySelector('.header').classList.add('scroll') : document.querySelector('.header').classList.remove('scroll');
 });
+
+function formGod() {
+    console.log(11);
+    item.addEventListener('click', function () {
+        Fancybox.show(
+            [
+                {
+                    src: '#modal-god',
+                    type: "inline",
+                },
+            ],
+        );
+    })
+}

@@ -7,75 +7,48 @@
 
   &.scroll {
     background-color: rgba(0, 0, 0, 1);
-    border-bottom: 2px solid rgba(255, 255, 255, .5);
 
     .menu {
       padding: 20px 0;
       @include breakpoint(sm-down) {
         padding: 60px 30px;
       }
-      @include breakpoint(xs)
-      {
-          padding: 70px 15px;
+      @include breakpoint(xs) {
+        padding: 70px 15px;
       }
     }
-
   }
 
-
-.menu {
-  transition: 0.4s;
-  padding: 45px 0 45px;
-  display: flex;
-  align-items: center;
-  @include breakpoint(sm-down) {
-    background-color: #ffffff;
-    flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  .menu_desktop {
+    @include breakpoint(sm-down) {
+      display: none;
+    }
     transition: 0.4s;
-    transform: translateX(-110%);
-    pointer-events: none;
-    height: 100vh;
-    &.active {
-      transform: translateX(0);
-      z-index: 15;
-      pointer-events: initial;
-    }
-    .btn-close {
-      cursor: pointer;
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      width: 25px;
-      height: 25px;
-      transform: rotate(45deg);
-
-      &::after,
-      &::before {
-        content: "";
-        background-color: #d1d1d1;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      &::after {
-        width: 100%;
-        height: 1px;
-      }
-
-      &::before {
-        height: 100%;
-        width: 1px;
-      }
-    }
+    padding: 45px 0 45px;
+    display: flex;
+    align-items: center;
   }
   .menu_item {
+    &:first-of-type {
+      .menu_link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-image: url("../img/svg/link-active.svg");
+        width: 20px;
+        height: 25px;
+        opacity: 1;
+        transition: 0.4s;
+        @include breakpoint(sm-down) {
+          display: none;
+        }
+      }
+    }
     & + .menu_item {
       margin-left: 35px;
       @media (max-width: 1600px) {
@@ -94,82 +67,112 @@
     color: #ffffff;
     position: relative;
     @include breakpoint(sm-down) {
+      padding: 0;
       color: #000000;
     }
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      background-image: url("../img/svg/link-active.svg");
-      width: 20px;
-      height: 25px;
-      opacity: 0;
-      transition: 0.4s
-    }
-
-    &.active {
+    @include breakpoint(sm-down) {
       &::after {
-        opacity: 1;
+        opacity: 0;
       }
+    }
+  }
 
-      @include breakpoint(xs) {
+  .menu_mobile {
+    display: none;
+    @include breakpoint(sm-down) {
+      display: flex;
+      background-color: #ffffff;
+      flex-direction: column;
+      align-items: flex-start;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 90%;
+      transition: 0.4s;
+      transform: translateX(-110%);
+      pointer-events: none;
+      height: 100vh;
+      padding: 60px 30px;
+
+      &.active {
+        transform: translateX(0);
+        z-index: 15;
+        pointer-events: initial;
+      }
+      .btn-close {
+        cursor: pointer;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 25px;
+        height: 25px;
+        transform: rotate(45deg);
+
+        &::after,
+        &::before {
+          content: "";
+          background-color: #d1d1d1;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
         &::after {
-          opacity: 0;
+          width: 100%;
+          height: 2px;
+        }
+
+        &::before {
+          height: 100%;
+          width: 2px;
         }
       }
     }
   }
-}
 
-.btn-open {
-  display: none;
-  @include breakpoint(sm-down) {
-    display: block;
-  }
-  width: 40px;
-  height: 30px;
-  margin: 20px 0;
-  position: relative;
+  .btn-open {
+    display: none;
+    @include breakpoint(sm-down) {
+      display: block;
+    }
+    width: 40px;
+    height: 30px;
+    margin: 20px 0;
+    position: relative;
 
-  &:hover {
+    &:hover {
+      span {
+        width: 100%;
+      }
+    }
+
+    &::after,
+    span,
+    &::before {
+      transition: 0.4s;
+      position: absolute;
+      content: "";
+      height: 2px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      left: 0;
+    }
+
+    &::after {
+      top: 0;
+      width: 100%;
+    }
+
     span {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 66%;
+    }
+
+    &::before {
+      bottom: 0;
       width: 100%;
     }
   }
-
-  &::after,
-  span,
-  &::before {
-    transition: 0.4s;
-    position: absolute;
-    content: "";
-    height: 2px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    left: 0;
-  }
-
-  &::after {
-    top: 0;
-    width: 100%;
-  }
-
-  span {
-    top: 50%;
-    transform: translateY(-50%);
-    width: 66%;
-  }
-
-  &::before {
-    bottom: 0;
-    width: 100%;
-  }
-}
-
 }

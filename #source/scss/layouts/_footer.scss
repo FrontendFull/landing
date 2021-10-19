@@ -10,7 +10,7 @@
         }
         .link {
             margin: 0 35px;
-            @include size(font-size, 18, 14);
+            font-size: 18px;
             color: #707070;
             transition: 0.4s;
             @include breakpoint(sm-down) {

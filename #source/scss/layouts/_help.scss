@@ -31,7 +31,8 @@
             padding: 40px 30px;
         }
         [type="submit"] {
-            margin-top: 50px;
+            margin: 50px auto 0;
+            width: min-content;
             @include breakpoint(smxs) {
                 min-width: initial;
             }

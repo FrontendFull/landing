@@ -74,7 +74,7 @@ body {
 }
 
 .deco-line_title {
-  width: fit-content;
+  width: max-content;
   position: relative;
   z-index: 2;
   padding-left: 30px;
@@ -100,10 +100,14 @@ body {
 
 .section {
   position: relative;
-  .anchor,.btn-anchor {
+  .anchor,
+  .btn-anchor {
     position: absolute;
     pointer-events: none;
     opacity: 0;
     top: -150px;
   }
+}
+.center {
+  text-align: center;
 }

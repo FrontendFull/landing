@@ -1,7 +1,40 @@
 .static_section {
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 800px;
+        height: 930px;
+        background-image: url("../img/svg/bg1.svg");
+        transform: translate(-25%, -50%);
+        pointer-events: none;
+        @include breakpoint(sm-down) {
+            content: none;
+        }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 390;
+        height: 600px;
+        transform: translate(10%, 15%);
+        background-image: url("../img/svg/bg2.svg");
+        pointer-events: none;
+        @include breakpoint(sm-down) {
+            content: none;
+        }
+    }
     margin-bottom: 150px;
     @include breakpoint(xs) {
         margin-bottom: 75px;
+    }
+    .container {
+        position: relative;
+        z-index: 2;
     }
     h2,
     .h2 {
@@ -51,7 +84,7 @@
         }
     }
     .button {
-        width: fit-content;
+        width: max-content;
         margin: 0 auto;
         @include breakpoint(smxs) {
             min-width: initial;

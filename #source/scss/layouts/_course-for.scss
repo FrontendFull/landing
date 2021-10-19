@@ -1,4 +1,6 @@
 .course-for_section {
+    position: relative;
+    z-index: 1;
     margin-bottom: 150px;
     @include breakpoint(xs) {
         margin-bottom: 75px;
@@ -84,7 +86,7 @@
                     padding: 10px 40px 10px 30px;
                     border-radius: 10px;
                     background-color: $color_2;
-                    width: fit-content;
+                    width: max-content;
                     text-transform: uppercase;
                     margin: -10px 0 30px;
                     @include breakpoint(xs) {
