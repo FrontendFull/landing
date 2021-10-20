@@ -11,7 +11,7 @@ window.onload = function () {
 
     })
 
-    for (const item of document.querySelectorAll('.menu_link')) {
+    for (const item of document.querySelectorAll('.menu_mobile .menu_link')) {
         item.addEventListener('click', function () {
             this.closest('.menu_mobile').classList.remove('active');
             document.querySelector('body').style.overflow = 'initial';

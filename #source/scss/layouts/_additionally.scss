@@ -51,10 +51,10 @@
                     font-weight: 300;
                     color: $color_2;
                     text-decoration: line-through;
-                    @include size(font-size, 24, 20);
+                    font-size: 24px;
                 }
                 .price_now {
-                    @include size(font-size, 36, 20);
+                    font-size: 36px;
                 }
             }
             .button {
@@ -81,7 +81,7 @@
             .item {
                 margin-bottom: 20px;
                 font-size: 24px;
-                @include size(font-size, 24, 14);
+                @include size(font-size, 24, 18);
                 font-weight: 300;
                 padding-left: 50px;
                 position: relative;

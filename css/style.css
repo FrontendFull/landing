@@ -438,6 +438,10 @@ body .wrapper {
   text-align: center;
 }
 
+.fancybox__backdrop {
+  background-color: #000000;
+}
+
 .button,
 [type=submit] {
   display: inline-block;
